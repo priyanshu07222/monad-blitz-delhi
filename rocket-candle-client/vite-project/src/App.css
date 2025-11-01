@@ -1,0 +1,43 @@
+/* ===================================================
+   ROCKET CANDLE - APP SPECIFIC STYLES
+   =================================================== */
+
+/* Note: Main styles and utilities are imported via index.css */
+
+/* App-specific overrides and additions */
+.app {
+  position: relative;
+  z-index: var(--z-base);
+}
+
+/* Component-specific styles that extend the base system */
+.app .game-container {
+  box-shadow: var(--shadow-2xl), 0 0 40px rgba(102, 126, 234, 0.2);
+}
+
+.app .play-button {
+  position: relative;
+  overflow: hidden;
+}
+
+.app .play-button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transition: left var(--transition-slow);
+}
+
+.app .play-button:hover::before {
+  left: 100%;
+}
+
+/* Specific app layout adjustments */
+.app-main {
+  position: relative;
+  z-index: var(--z-docked);
+  min-height: 100vh;
+}
